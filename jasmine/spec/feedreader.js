@@ -80,6 +80,17 @@ $(function() {
 
       });
 
+      describe('Initial Entries', function(){
+
+
+
+      });
+
+      describe('New Feed selection', function(){
+
+
+
+      });
     });
     /* TODO: Write a new test suite named "Initial Entries" */
 
