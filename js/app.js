@@ -7,21 +7,21 @@
  */
 
 // The names and URLs to all of the feeds we'd like available.
-var allFeeds = [
-    {
-        name: 'Udacity Blog',
-        url: 'http://blog.udacity.com/feed'
-    }, {
-        name: 'CSS Tricks',
-        url: 'http://feeds.feedburner.com/CssTricks'
-    }, {
-        name: 'HTML5 Rocks',
-        url: 'http://feeds.feedburner.com/html5rocks'
-    }, {
-        name: 'Linear Digressions',
-        url: 'http://feeds.feedburner.com/udacity-linear-digressions'
-    }
-];
+ var allFeeds = [
+     {
+         name: 'Udacity Blog',
+         url: 'http://blog.udacity.com/feed'
+     }, {
+         name: 'CSS Tricks',
+         url: 'http://feeds.feedburner.com/CssTricks'
+     }, {
+         name: 'HTML5 Rocks',
+         url: 'http://feeds.feedburner.com/html5rocks'
+     }, {
+         name: 'Linear Digressions',
+         url: 'http://feeds.feedburner.com/udacity-linear-digressions'
+     }
+ ];
 
 /* This function starts up our application. The Google Feed
  * Reader API is loaded asynchonously and will then call this
@@ -105,12 +105,12 @@ $(function() {
      * above using Handlebars) and append it to the list of all
      * available feeds within the menu.
      */
-    allFeeds.forEach(function(feed) {
-        feed.id = feedId;
-        feedList.append(feedItemTemplate(feed));
+     allFeeds.forEach(function(feed) {
+         feed.id = feedId;
+         feedList.append(feedItemTemplate(feed));
 
-        feedId++;
-    });
+         feedId++;
+     });
 
     /* When a link in our feedList is clicked on, we want to hide
      * the menu, load the feed, and prevent the default action
