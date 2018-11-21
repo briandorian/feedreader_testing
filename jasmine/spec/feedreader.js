@@ -62,7 +62,7 @@ $(function() {
       describe('New Feed selection', function(){
          let content;
             beforeEach(function(done){
-              loadFeed(0,done);
+              loadFeed(0);
               content = document.querySelector(".feed").textContent;
               loadFeed(2,done);
             });
