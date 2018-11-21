@@ -35,7 +35,10 @@ $(function() {
     describe('The menu', function() {
        it ('is hidden by default' , function () {
          let body = document.querySelector("body");
-         expect(body.classList.contains('menu-hidden')).toBe(true);
+        // expect(body.classList.contains('menu-hidden')).toBe(true);
+        // This new line will help us to not break another class when it's
+        // added to the body.
+        expect($('body').hasClass('menu-hidden')).toBe(true);
       });
 
       it ('changes visibility when the menu icon is clicked' , function (){
@@ -52,10 +55,9 @@ $(function() {
           beforeEach( function(done){
             loadFeed(0,done);
           });
-
           it ('are loaded in the feed container properly',function(){
-            let feedContainer = document.querySelector(".feed");
-            expect(feedContainer.children.length > 0).toBe(true);
+            let feedContainer = document.querySelector(".feed .entry");
+            expect(feedContainer.innerText.length > 0).toBe(true);
           });
       });
 
