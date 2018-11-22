@@ -18,7 +18,7 @@ $(function() {
         it('have content on its feeds', function() {
           allFeeds.forEach(function (feed) {
             let feedLink = feed.url;
-            expect(feedLink).not.toBeUndefined();
+            expect(feedLink).toBeDefined();
             expect(feedLink.length).not.toEqual(0);
           });
         });
@@ -35,29 +35,30 @@ $(function() {
     describe('The menu', function() {
        it ('is hidden by default' , function () {
          let body = document.querySelector("body");
-        // expect(body.classList.contains('menu-hidden')).toBe(true);
+         expect(body.classList.contains('menu-hidden')).toBe(true);
         // This new line will help us to not break another class when it's
         // added to the body.
-        expect($('body').hasClass('menu-hidden')).toBe(true);
+        //expect($('body').hasClass('menu-hidden')).toBe(true);
       });
 
       it ('changes visibility when the menu icon is clicked' , function (){
             let menuButton = document.querySelector(".icon-list");
-            let body = document.querySelector("body").className;
+            let body = document.querySelector("body").classList.contains("menu-hidden");
 
             menuButton.click();
-            expect(body).not.toEqual(document.querySelector("body").className);
+            expect(body == document.querySelector("body").classList.contains("menu-hidden")).toBeFalsy();
             menuButton.click();
-            expect(body).toEqual(document.querySelector("body").className);
+            expect(body == document.querySelector("body").classList.contains("menu-hidden")).toBeTruthy();
       });
     });
       describe('Initial Entries', function(done){
           beforeEach( function(done){
             loadFeed(0,done);
           });
+
           it ('are loaded in the feed container properly',function(){
             let feedContainer = document.querySelector(".feed .entry");
-            expect(feedContainer.innerText.length > 0).toBe(true);
+            expect(feedContainer.classList.contains("entry")).toBeTruthy();
           });
       });
 
